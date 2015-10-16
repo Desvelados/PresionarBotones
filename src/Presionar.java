@@ -22,7 +22,7 @@ public class Presionar {
 				r.keyRelease(KeyEvent.VK_UP);
 				
 				try{
-					 Thread.sleep(1000);
+					 Thread.sleep(2000);
 				}
 				catch(Exception es){}
 				
@@ -33,7 +33,7 @@ public class Presionar {
 				r.keyRelease(KeyEvent.VK_RIGHT);
 				
 				try{
-					 Thread.sleep(1000);
+					 Thread.sleep(2000);
 				}
 				catch(Exception es){}
 				
@@ -45,7 +45,7 @@ public class Presionar {
 				r.keyRelease(KeyEvent.VK_DOWN);
 				
 				try{
-					 Thread.sleep(1000);
+					 Thread.sleep(2000);
 				}
 				catch(Exception es){}
 				
@@ -57,7 +57,7 @@ public class Presionar {
 				r.keyRelease(KeyEvent.VK_LEFT);
 				
 				try{
-					 Thread.sleep(1000);
+					 Thread.sleep(2000);
 				}
 				catch(Exception es){}
 				

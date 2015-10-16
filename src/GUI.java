@@ -1,5 +1,7 @@
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
 import java.awt.TextField;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -27,12 +29,13 @@ public class GUI implements KeyListener {
 	private JLabel firma,tit;
 	private TextField campo,repeticion;
 	
-	
 	public GUI(){
 		
 		ventana=new JFrame("POKEMON DD");
 		ventana.setBounds(550,200,450,260);
 		ventana.setDefaultCloseOperation(ventana.EXIT_ON_CLOSE);
+		//asi no se puede maximizar
+		ventana.setResizable(false);
 		ventana.setContentPane(new JLabel(imagen));
 		ventana.setLayout(null);
 		Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("Imagen/Poke2.png"));
@@ -51,7 +54,7 @@ public class GUI implements KeyListener {
 		
 		
 		arrancar=new JRadioButton("Arrancar",true);
-		arrancar.setBounds(50,0,100,100);
+		arrancar.setBounds(50,25,100,50);
 		arrancar.setBackground(new Color(255,52,55));
 		arrancar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){	
@@ -74,7 +77,7 @@ public class GUI implements KeyListener {
 		
 		
 		frenar=new JRadioButton("Frenar",false);
-		frenar.setBounds(160,0,100,100);
+		frenar.setBounds(160,25,100,50);
 		frenar.setBackground(new Color(255,52,55));
 		frenar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){	
@@ -112,6 +115,18 @@ public class GUI implements KeyListener {
 		arrancar.addKeyListener(this);
 		frenar.addKeyListener(this);
 		campo.addKeyListener(this);
+		/*KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(new KeyEventDispatcher(){
+		public boolean dispatchKeyEvent(KeyEvent e){
+			if(e.getKeyCode() == KeyEvent.VK_F3){
+				keyPressed(e);
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		});*/
+		
 		
 		ventana.add(repeticion);
 		ventana.add(tit);
